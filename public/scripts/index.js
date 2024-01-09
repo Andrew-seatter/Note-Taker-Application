@@ -5,6 +5,7 @@ let saveNoteBtn;
 let newNoteBtn;
 let noteList;
 
+
 if (window.location.pathname === '/notes') {
   noteForm = document.querySelector('.note-form');
   noteTitle = document.querySelector('.note-title');
@@ -70,6 +71,8 @@ const renderActiveNote = () => {
     noteTitle.value = '';
     noteText.value = '';
   }
+
+  getAndRenderNotes();
 };
 
 const handleNoteSave = () => {
@@ -81,6 +84,9 @@ const handleNoteSave = () => {
     getAndRenderNotes();
     renderActiveNote();
   });
+
+  getAndRenderNotes();
+  renderActiveNote();
 };
 
 // Delete the clicked note
